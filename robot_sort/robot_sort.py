@@ -103,19 +103,41 @@ class SortingRobot:
         # repeat
         # if card holding is greater than next, swap card, switch light on, do preceding step
         # once at end, if light on, go all the way to beginning of list, switch light off, start again
-        
-        for i in range(0, len(l) - 1):
-            self.set_light_off
-            if l[i] < l[i + 1]:
-                self.move_right()
-            if l[i] > l[i + 1]:
-                self.swap_item()
-                self.set_light_on()
-                self.move_right()
-            if self.light_is_on and not self.can_move_right:
-                self.sort()
-            if not self.light_is_on and not self.can_move_right:
-                return l
+        self.set_light_on()
+        self.swap_item()
+        self.move_right()
+        '''
+        main while loop - track the light, immediately turn light off
+        nested while loop - go to the right
+        nested while loop - go to the left
+        '''
+
+        while self.light_is_on():
+            self.set_light_off()
+            
+            while self.compare_item() is not None:
+            
+                while self.can_move_right():
+                    if self.compare_item() == 1:
+                        self.swap_item()
+                        self.set_light_on()
+                        self.move_right()
+                    else:
+                        self.move_right()
+
+                while self.can_move_left() and self.compare_item() is not None:
+                    if self.compare_item() == 1:
+                        self.swap_item()
+                        self.set_light_on()
+                        self.move_left()
+                    else:
+                        self.move_left()
+            
+            self.swap_item()
+            self.move_right()
+            self.swap_item()
+            self.move_right()
+        self.swap_item()
 
 
 if __name__ == "__main__":
