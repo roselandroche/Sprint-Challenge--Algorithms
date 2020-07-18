@@ -103,6 +103,7 @@ class SortingRobot:
         # repeat
         # if card holding is greater than next, swap card, switch light on, do preceding step
         # once at end, if light on, go all the way to beginning of list, switch light off, start again
+        
         for i in range(0, len(l) - 1):
             self.set_light_off
             if l[i] < l[i + 1]:
