@@ -43,7 +43,7 @@ Write out your proposed algorithm in plain English or pseudocode AND give the ru
 #### 3. Use recursion to complete the `count_th()` function _(3 points)_
 Inside the `recursive_count_th` directory you'll find the `count_th.py` file. In this file, please add your recursive implementation to the `count_th()` method following these rules:
 
-* Your function should take in a signle parameter (a string `word`)
+* Your function should take in a single parameter (a string `word`)
 * Your function should return a count of how many occurences of ***"th"*** occur within `word`. Case matters.
 * Your function must utilize recursion. 
   * It cannot contain any loops.
@@ -68,14 +68,15 @@ Your task is to program this robot to sort lists using ONLY these abilities.
 Inside the `robot_sort` directory you'll find the `robot_sort.py` file. Open it up and read through each of the robot's abilities. Once you've understood those, start filling out the `sort()` method following these rules:
 
   * You may use any pre-defined robot methods.
-  * You may NOT modify any pre-defined robot methods.
   * You may use logical operators. (`if`, `and`, `or`, `not`, etc.)
   * You may use comparison operators. (`>`, `>=`, `<`, `<=`, `==`, `is`, etc.)
   * You may use iterators. (`while`, `for`, `break`, `continue`)
+  * You may define robot helper methods, as long as they follow all the rules.
+
+  * You may NOT modify any pre-defined robot methods.
   * You may NOT store any variables. (`=`)
   * You may NOT access any instance variables directly. (`self._anything`)
   * You may NOT use any Python libraries or class methods. (`sorted()`, etc.)
-  * You may define robot helper methods, as long as they follow all the rules.
 
 ##### Hints
 
